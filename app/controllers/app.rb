@@ -22,9 +22,15 @@ module Example
     end
 
     get '/auth/:name/callback' do
-      auth = request.env['omniauth.auth']
+      auth = auth_hash
       p auth
       p auth["credentials"]["token"]
+    end
+
+    protected
+
+    def auth_hash
+      request.env['omniauth.auth']
     end
 
   end
