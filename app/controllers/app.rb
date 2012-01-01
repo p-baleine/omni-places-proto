@@ -22,7 +22,8 @@ module Example
 
     get '/auth/:name/callback' do
       auth = request.env['omniauth.auth']
-      puts auth
+      p auth
+      p auth["credentials"]["token"]
     end
 
   end
