@@ -42,6 +42,7 @@ PLATFORMS
 DEPENDENCIES
   haml
   multi_json
+  multipart-post
   omniauth-facebook
   omniauth-twitter
   sinatra
