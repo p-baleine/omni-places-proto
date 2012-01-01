@@ -1,11 +1,11 @@
 require 'haml'
 require 'ostruct'
-#require 'omniauth-twitter'
 
 SiteConfig = OpenStruct.new(
-                 :title => 'Your Application Name',
-                 :author => 'Your Name',
-                 :url_base => 'http://localhost:4567/')
+               :title => 'Your Application Name',
+               :author => 'Your Name',
+               :url_base => 'http://localhost:4567/'
+             )
 
 module Example
   class Web < Sinatra::Base
@@ -17,6 +17,7 @@ module Example
     end
 
     get "/" do
+      User.find_or_create_from_auth_hash
       haml :index
     end
 
