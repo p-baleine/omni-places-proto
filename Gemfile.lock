@@ -3,6 +3,7 @@ GEM
   specs:
     haml (3.1.4)
     hashie (1.2.0)
+    multi_json (1.0.4)
     oauth (0.4.5)
     omniauth (1.0.1)
       hashie (~> 1.2)
@@ -26,5 +27,6 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  multi_json
   omniauth-twitter
   sinatra
