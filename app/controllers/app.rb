@@ -20,10 +20,10 @@ module Example
       haml :index
     end
 
-    # post '/auth/:name/callback' do
-    #   auth = request.env['omniauth.auth']
-    #   p auth
-    # end
+    post '/auth/:name/callback' do
+      auth = request.env['omniauth.auth']
+      p auth
+    end
 
   end
 end
