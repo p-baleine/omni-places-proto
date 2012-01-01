@@ -12,24 +12,35 @@ use OmniAuth::Builder do
   provider :twitter, 'etqFT6toO5bFOi03usnCg', 'Brxl7bMlXZ8GJa87wm5E2VU34rhZuNJENhDkBypY18'
 end
 
-module Example
-  class Web < Sinatra::Base
+get '/' do
+  <<-HTML
+  <a href='/auth/twitter'>Sign in with Twitter</a>
+  HTML
+end
 
-    configure do
-      set :public_folder, "#{File.dirname(__FILE__)}/../public"
-      set :views, "#{File.dirname(__FILE__)}/../views"
-      set :haml, { :attr_wrapper => '"' }
-    end
+post '/auth/:name/callback' do
+  auth = request.env['omniauth.auth']
+  p auth
+end
 
-    get "/" do
-      haml :index
-    end
+# module Example
+#   class Web < Sinatra::Base
+
+#     configure do
+#       set :public_folder, "#{File.dirname(__FILE__)}/../public"
+#       set :views, "#{File.dirname(__FILE__)}/../views"
+#       set :haml, { :attr_wrapper => '"' }
+#     end
+
+#     get "/" do
+#       haml :index
+#     end
 
     # post '/auth/:name/callback' do
     #   auth = request.env['omniauth.auth']
     #   p auth
     # end
 
-  end
-end
+#   end
+# end
 
