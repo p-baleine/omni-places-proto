@@ -7,12 +7,13 @@ SiteConfig = OpenStruct.new(
                  :author => 'Your Name',
                  :url_base => 'http://localhost:4567/')
 
+use Rack::Session::Cookie
+use OmniAuth::Builder do
+  provider :twitter, 'etqFT6toO5bFOi03usnCg', 'Brxl7bMlXZ8GJa87wm5E2VU34rhZuNJENhDkBypY18'
+end
+
 module Example
   class Web < Sinatra::Base
-    use Rack::Session::Cookie
-    use OmniAuth::Builder do
-      provider :twitter, 'etqFT6toO5bFOi03usnCg', 'Brxl7bMlXZ8GJa87wm5E2VU34rhZuNJENhDkBypY18'
-    end
 
     configure do
       set :public_folder, "#{File.dirname(__FILE__)}/../public"
