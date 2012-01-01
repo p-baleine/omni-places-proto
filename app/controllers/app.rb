@@ -21,9 +21,8 @@ module Example
     end
 
     get '/auth/:name/callback' do
+      auth = auth_hash
       user = User.find_or_create_from_auth_hash(auth_hash)
-      self.current_user = @user
-      redirect_to '/'
 
       p auth
       p auth["credentials"]["token"]
