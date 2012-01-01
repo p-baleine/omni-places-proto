@@ -16,3 +16,8 @@ $stderr.reopen(log)
 use Rack::ShowExceptions
 use Rack::ContentLength
 use Rack::Static, :urls => [ '/favicon.ico', '/stylesheets' ], :root => "public"
+
+use Rack::Session::Cookie
+use OmniAuth::Builder do
+  provider :twitter, 'etqFT6toO5bFOi03usnCg', 'Brxl7bMlXZ8GJa87wm5E2VU34rhZuNJENhDkBypY18'
+end
