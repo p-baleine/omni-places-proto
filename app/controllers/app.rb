@@ -17,7 +17,7 @@ module Example
     end
 
     get "/" do
-      #User.find_or_create_from_auth_hash
+      User.find_or_create_from_auth_hash 'hoge'
       haml :index
     end
 
