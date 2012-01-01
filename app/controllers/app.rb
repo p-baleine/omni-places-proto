@@ -9,6 +9,11 @@ SiteConfig = OpenStruct.new(
 
 module Example
   class Web < Sinatra::Base
+    use Rack::Session::Cookie
+    use OmniAuth::Builder do
+      provider :twitter, 'etqFT6toO5bFOi03usnCg', 'Brxl7bMlXZ8GJa87wm5E2VU34rhZuNJENhDkBypY18'
+    end
+
     configure do
       set :public_folder, "#{File.dirname(__FILE__)}/../public"
       set :views, "#{File.dirname(__FILE__)}/../views"
@@ -18,6 +23,12 @@ module Example
     get "/" do
       haml :index
     end
+
+    post '/auth/:name/callback' do
+      auth = request.env['omniauth.auth']
+      p auth
+    end
+
   end
 end
 
