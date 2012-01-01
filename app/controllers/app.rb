@@ -1,6 +1,6 @@
 require 'haml'
 require 'ostruct'
-require 'omniauth-twitter'
+#require 'omniauth-twitter'
 
 SiteConfig = OpenStruct.new(
                  :title => 'Your Application Name',
