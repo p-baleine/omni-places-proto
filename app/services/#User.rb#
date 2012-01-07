@@ -1,0 +1,16 @@
+module Example
+  class User < Example::Service
+
+    def self.find_or_create_from_auth_hash(provider, auth_hash)
+      # TODO factory
+      case provider
+      when 'twitter'
+      when 'facebook'
+      when 'google_oauth2'
+      else
+      end
+      auth_hash
+    end
+
+  end
+end
