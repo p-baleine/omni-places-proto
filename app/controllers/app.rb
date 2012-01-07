@@ -25,9 +25,9 @@ module Example
       user = User.find_or_create_from_auth_hash(params[:name], auth_hash)
 
       #p auth
-      p auth["credentials"]["token"]
+      #p auth["credentials"]["token"]
       #p auth
-      #p auth["credentials"]
+      p auth["credentials"]
     end
 
     protected
