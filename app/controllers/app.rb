@@ -34,6 +34,16 @@ module Example
       request.env['omniauth.auth']
     end
 
+    class Stream
+      def each
+        100.times { |i| yield "#{i}\n" }
+      end
+    end
+
+    get "/hoge" do
+      Stream.new
+    end
+
   end
 end
 
