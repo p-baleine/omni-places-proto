@@ -26,7 +26,8 @@ module Example
 
       #p auth
       #p auth["credentials"]["token"]
-      p auth["credentials"]
+      p auth
+      #p auth["credentials"]
     end
 
     protected

@@ -1,5 +1,5 @@
 module Example
-  class User
+  class User < Example::Service
 
     def self.find_or_create_from_auth_hash(auth_hash)
       auth_hash
